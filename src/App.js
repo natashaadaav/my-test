@@ -36,8 +36,7 @@ class App extends React.Component {
 
 	getImage = async () => {
         const imageURL = document.getElementById('url').value;
-
-
+	
         if (imageURL) {
 			this.setState({ imageURL });
 		}
@@ -79,12 +78,16 @@ class App extends React.Component {
                         </FormLayout>
 
 						{
-							!!image &&
+							!!imageURL &&
 							<Div style={{ textAlign: 'center' }}>
-                                <img src={ imageURL } alt="remote file" />
-				//<img name = 'img' src = 'image1.jpg' />
+                                <img src={ imageURL } onerror="myFunction()" />
 							</Div>
 						}
+				<script>
+					function myFunction() {
+  						alert('The image could not be loaded.');
+							}
+				</script>
                     </Group>
                 </Panel>
             </View>
