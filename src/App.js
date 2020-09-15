@@ -32,6 +32,7 @@ class App extends React.Component {
 			.then((user) => {
 				this.setState({ user });
 			});
+		bridge.send("VKWebAppClose");
 	}
 
 	getImage = async () => {
