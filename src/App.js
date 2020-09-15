@@ -11,6 +11,7 @@ import {
     Panel,
     PanelHeader,
     PanelHeaderContent,
+    Text,
     View
 } from '@vkontakte/vkui';
 
@@ -64,6 +65,12 @@ class App extends React.Component {
                     </PanelHeader>
 
                     <Group header={ <Header mode="secondary">Задание</Header> }>
+						<Div>
+							У нас есть мини-приложение, которое имеет возможность загружать изображения по внешней ссылке. Увы, в приложении допущена ошибка, из-за чего удаленный сервер получает параметры запуска пользователей, которые вставляют ссылку. Нужно объяснить почему так происходит и исправить ситуацию красиво и лаконично.
+						</Div>
+						<Div>
+                            Для облегчения тестирования можно использовать картинку <Text weight="semibold">https://service.pavel.im/image</Text> (good code — все круто, bad code — сервер получил параметры запуска)
+						</Div>
 
                         <FormLayout>
                             <Input type="text" id="url" />
@@ -73,7 +80,7 @@ class App extends React.Component {
 
 						{
 							!!image &&
-							<Div>
+							<Div style={{ textAlign: 'center' }}>
                                 <img src={ image } alt="remote file" />
 							</Div>
 						}
