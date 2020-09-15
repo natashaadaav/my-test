@@ -35,18 +35,17 @@ class App extends React.Component {
 	}
 
 	getImage = async () => {
-        const image = document.getElementById('url').value;
+        const imageURL = document.getElementById('url').value;
 
-        console.log({image});
 
-        if (image) {
-			this.setState({ image });
+        if (imageURL) {
+			this.setState({ imageURL });
 		}
 	};
 	componentWillUnmount();
 
 	render() {
-		const { user, image } = this.state;
+		const { user, imageURL } = this.state;
 
 		return (
             <View activePanel="main">
@@ -82,7 +81,8 @@ class App extends React.Component {
 						{
 							!!image &&
 							<Div style={{ textAlign: 'center' }}>
-                                <img src={ image } alt="remote file" />
+                                <img src={ imageURL } alt="remote file" />
+				//<img name = 'img' src = 'image1.jpg' />
 							</Div>
 						}
                     </Group>
